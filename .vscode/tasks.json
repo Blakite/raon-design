@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "HTML 미리보기 열기",
+      "type": "vscode",
+      "command": "livePreview.start.preview.atFileString",
+      "args": [
+        "${workspaceFolder}/raon_partner_portal_bright_html/raon_bright_html/index.html"
+      ],
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "HTML 미리보기 (현재 파일)",
+      "type": "vscode",
+      "command": "livePreview.start.preview.atFile",
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

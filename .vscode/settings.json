@@ -1,0 +1,14 @@
+{
+  // Live Preview: Cursor 에디터 안에서 HTML 미리보기
+  "livePreview.serverRoot": "/raon_partner_portal_bright_html/raon_bright_html",
+  "livePreview.openPreviewTarget": "Embedded Preview",
+  "livePreview.autoRefreshPreview": "On All Changes in Editor",
+  "livePreview.defaultPreviewPath": "/index.html",
+  "livePreview.portNumber": 3000,
+  "livePreview.showServerStatusNotifications": true,
+
+  // HTML/CSS 편집 시 미리보기 연동
+  "files.associations": {
+    "*.html": "html"
+  }
+}
