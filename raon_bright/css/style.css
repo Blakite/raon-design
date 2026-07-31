@@ -34,12 +34,40 @@ body {
 }
 
 .page {
+  position: relative;
   min-height: 100vh;
   min-width: 1200px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  overflow: hidden;
+}
+
+.page-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page > :not(.page-bg-video) {
+  position: relative;
+  z-index: 1;
+}
+
+.page--bg-image {
   background-image: url("../assets/images/login-bg1.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page--bg-image-3 {
+  background-image: url("../assets/images/login-bg3.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -63,9 +91,9 @@ body {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.62) 0%,
-    rgba(255, 255, 255, 0.32) 38%,
-    rgba(255, 255, 255, 0.18) 62%,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.14) 38%,
+    rgba(255, 255, 255, 0.28) 62%,
     transparent 82%
   );
   pointer-events: none;
@@ -85,6 +113,8 @@ body {
   position: absolute;
   left: 62px;
   top: 205px;
+  max-width: calc(100% - 652px);
+  z-index: 1;
 }
 
 .copy-eyebrow {
@@ -624,6 +654,148 @@ footer.site-footer {
 }
 
 /* ==========================================================================
+   반응형 (중간 해상도)
+   ========================================================================== */
+@media (max-width: 1400px) {
+  .copy {
+    max-width: calc(100% - 620px);
+  }
+
+  .copy-sub {
+    font-size: 16px;
+  }
+
+  .copy h1 {
+    font-size: 34px;
+    letter-spacing: -1.5px;
+  }
+
+  .quick {
+    padding: 14px 56px;
+    gap: 12px;
+  }
+
+  .quick-card {
+    padding: 10px 14px;
+    gap: 12px;
+  }
+
+  .quick-card strong {
+    font-size: 18px;
+  }
+
+  .quick-card-desc {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .copy {
+    max-width: calc(100% - 600px);
+  }
+
+  .copy-sub {
+    font-size: 15px;
+  }
+
+  .copy h1 {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .quick {
+    padding: 12px 44px;
+    gap: 10px;
+  }
+
+  .quick-card {
+    padding: 10px 12px;
+    gap: 10px;
+    min-height: 84px;
+  }
+
+  .quick-card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .quick-card strong {
+    font-size: 16px;
+    top: 16px;
+  }
+
+  .quick-card-desc {
+    font-size: 11px;
+    min-height: 30px;
+  }
+
+  .quick-card:hover .quick-card-desc {
+    top: 32px;
+  }
+
+  .quick-card-arrow {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .copy {
+    max-width: calc(100% - 580px);
+  }
+
+  .copy-sub {
+    font-size: 14px;
+  }
+
+  .copy h1 {
+    font-size: 26px;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+  }
+
+  .quick {
+    padding: 12px 32px;
+    gap: 8px;
+    min-height: 88px;
+  }
+
+  .quick-card {
+    padding: 8px 10px;
+    gap: 8px;
+    min-height: 76px;
+  }
+
+  .quick-card-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .quick-card-text {
+    min-height: 56px;
+  }
+
+  .quick-card strong {
+    font-size: 14px;
+    top: 14px;
+    letter-spacing: -0.02em;
+  }
+
+  .quick-card-desc {
+    font-size: 10px;
+    line-height: 1.45;
+    min-height: 28px;
+  }
+
+  .quick-card:hover .quick-card-desc {
+    top: 28px;
+  }
+
+  .quick-card-arrow {
+    font-size: 26px;
+  }
+}
+
+/* ==========================================================================
    반응형 (900px 이하)
    ========================================================================== */
 @media (max-width: 900px) {
@@ -648,7 +820,13 @@ footer.site-footer {
   }
 
   .copy h1 {
-    font-size: 26px;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+  }
+
+  .copy-sub {
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .login-card {
@@ -664,6 +842,24 @@ footer.site-footer {
     grid-template-columns: 1fr;
     padding: 12px 18px;
     gap: 10px;
+  }
+
+  .quick-card {
+    min-height: 72px;
+    padding: 10px 14px;
+  }
+
+  .quick-card strong {
+    font-size: 16px;
+    top: 14px;
+  }
+
+  .quick-card-desc {
+    font-size: 11px;
+  }
+
+  .quick-card:hover .quick-card-desc {
+    top: 30px;
   }
 
   .footer-top {
